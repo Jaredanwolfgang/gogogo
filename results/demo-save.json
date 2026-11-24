@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "game": "go",
+  "size": 8,
+  "events": [
+    {
+      "action": "play",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "action": "play",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "action": "play",
+      "row": 7,
+      "col": 7
+    },
+    {
+      "action": "play",
+      "row": 6,
+      "col": 6
+    },
+    {
+      "action": "play",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "action": "undo"
+    },
+    {
+      "action": "play",
+      "row": 1,
+      "col": 0
+    }
+  ],
+  "position": {
+    "cells": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "turn": 2,
+    "passes": 0,
+    "captures": [
+      1,
+      0
+    ],
+    "move_count": 5,
+    "undo_remaining": 2,
+    "outcome": null
+  }
+}

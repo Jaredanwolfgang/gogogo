@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1120" viewBox="0 0 1500 1120">
+<rect width="1500" height="1120" fill="white"/>
+<defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M1,1 L10,6 L1,11" fill="none" stroke="#415851" stroke-width="1.5"/></marker>
+<marker id="triangle" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M1,1 L12,7 L1,13 Z" fill="white" stroke="#415851" stroke-width="1.5"/></marker>
+<marker id="diamond" markerWidth="16" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L8,1 L15,6 L8,11 Z" fill="#415851"/></marker></defs>
+<rect x="40" y="30" width="350" height="128" rx="4" fill="#f4f7f4" stroke="#415851" stroke-width="2"/>
+<line x1="40" x2="390" y1="77" y2="77" stroke="#415851"/>
+<text x="215.0" y="62" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="bold">GuiClient</text>
+<text x="56" y="108" font-family="Menlo,monospace" font-size="20">+ click / dispatch / draw</text>
+<text x="56" y="142" font-family="Menlo,monospace" font-size="20">- client: ConsoleClient</text>
+<rect x="560" y="30" width="380" height="128" rx="4" fill="#f4f7f4" stroke="#415851" stroke-width="2"/>
+<line x1="560" x2="940" y1="77" y2="77" stroke="#415851"/>
+<text x="750.0" y="62" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="bold">ConsoleClient</text>
+<text x="576" y="108" font-family="Menlo,monospace" font-size="20">+ execute / run</text>
+<text x="576" y="142" font-family="Menlo,monospace" font-size="20">- service / view</text>
+<rect x="1100" y="30" width="350" height="128" rx="4" fill="#f4f7f4" stroke="#415851" stroke-width="2"/>
+<line x1="1100" x2="1450" y1="77" y2="77" stroke="#415851"/>
+<text x="1275.0" y="62" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="bold">ConsoleView</text>
+<text x="1116" y="108" font-family="Menlo,monospace" font-size="20">+ render(client)</text>
+<text x="1116" y="142" font-family="Menlo,monospace" font-size="20">- components: tuple</text>
+<polyline points="390,94 560,94" fill="none" stroke="#415851" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="445" y="80" font-family="Helvetica,Arial,sans-serif" font-size="23" fill="#415851">uses</text>
+<polyline points="940,94 1100,94" fill="none" stroke="#415851" stroke-width="2.2" marker-end="url(#arrow)" marker-start="url(#diamond)"/>
+<rect x="40" y="280" width="400" height="128" rx="4" fill="#f4f7f4" stroke="#415851" stroke-width="2"/>
+<line x1="40" x2="440" y1="327" y2="327" stroke="#415851"/>
+<text x="240.0" y="312" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="bold">JsonGameRepository</text>
+<text x="56" y="358" font-family="Menlo,monospace" font-size="20">+ save(session, file)</text>
+<text x="56" y="392" font-family="Menlo,monospace" font-size="20">+ load(file) / decode(data)</text>
+<rect x="560" y="280" width="380" height="128" rx="4" fill="#f4f7f4" stroke="#415851" stroke-width="2"/>
+<line x1="560" x2="940" y1="327" y2="327" stroke="#415851"/>
+<text x="750.0" y="312" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="bold">GameService</text>
+<text x="576" y="358" font-family="Menlo,monospace" font-size="20">+ new / restart</text>
+<text x="576" y="392" font-family="Menlo,monospace" font-size="20">+ play / save / load</text>
+<rect x="1100" y="280" width="350" height="128" rx="4" fill="#f4f7f4" stroke="#415851" stroke-width="2"/>
+<line x1="1100" x2="1450" y1="327" y2="327" stroke="#415851"/>
+<text x="1275.0" y="312" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="bold">GameFactory</text>
+<text x="1116" y="358" font-family="Menlo,monospace" font-size="20">+ create(key, size)</text>
+<text x="1116" y="392" font-family="Menlo,monospace" font-size="20">+ register(rule)</text>
+<polyline points="750,158 750,280" fill="none" stroke="#415851" stroke-width="2.2" marker-end="url(#arrow)"/>
+<polyline points="560,344 440,344" fill="none" stroke="#415851" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="478" y="329" font-family="Helvetica,Arial,sans-serif" font-size="23" fill="#415851">uses</text>
+<polyline points="940,344 1100,344" fill="none" stroke="#415851" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="966" y="329" font-family="Helvetica,Arial,sans-serif" font-size="23" fill="#415851">creates</text>
+<rect x="560" y="530" width="380" height="162" rx="4" fill="#f4f7f4" stroke="#415851" stroke-width="2"/>
+<line x1="560" x2="940" y1="577" y2="577" stroke="#415851"/>
+<text x="750.0" y="562" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="bold">GameSession</text>
+<text x="576" y="608" font-family="Menlo,monospace" font-size="20">- history / events / undos</text>
+<text x="576" y="642" font-family="Menlo,monospace" font-size="20">+ play / pass_turn</text>
+<text x="576" y="676" font-family="Menlo,monospace" font-size="20">+ resign / undo</text>
+<rect x="40" y="530" width="400" height="162" rx="4" fill="#f4f7f4" stroke="#415851" stroke-width="2"/>
+<line x1="40" x2="440" y1="577" y2="577" stroke="#415851"/>
+<text x="240.0" y="562" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="bold">GameState</text>
+<text x="56" y="608" font-family="Menlo,monospace" font-size="20">board / turn / passes</text>
+<text x="56" y="642" font-family="Menlo,monospace" font-size="20">captures / outcome</text>
+<text x="56" y="676" font-family="Menlo,monospace" font-size="20">immutable memento</text>
+<rect x="1100" y="530" width="350" height="162" rx="4" fill="#f4f7f4" stroke="#415851" stroke-width="2"/>
+<line x1="1100" x2="1450" y1="577" y2="577" stroke="#415851"/>
+<text x="1275.0" y="562" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="bold">RuleStrategy (abstract)</text>
+<text x="1116" y="608" font-family="Menlo,monospace" font-size="20">+ place(...)</text>
+<text x="1116" y="642" font-family="Menlo,monospace" font-size="20">+ outcome(...)</text>
+<text x="1116" y="676" font-family="Menlo,monospace" font-size="20">supports_pass</text>
+<polyline points="750,408 750,530" fill="none" stroke="#415851" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="769" y="480" font-family="Helvetica,Arial,sans-serif" font-size="23" fill="#415851">owns 0..1</text>
+<polyline points="560,610 440,610" fill="none" stroke="#415851" stroke-width="2.2" marker-end="url(#arrow)" marker-start="url(#diamond)"/>
+<text x="478" y="590" font-family="Helvetica,Arial,sans-serif" font-size="23" fill="#415851">1..*</text>
+<polyline points="940,610 1100,610" fill="none" stroke="#415851" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="959" y="590" font-family="Helvetica,Arial,sans-serif" font-size="23" fill="#415851">delegates</text>
+<polyline points="1275,408 1275,530" fill="none" stroke="#415851" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="1294" y="480" font-family="Helvetica,Arial,sans-serif" font-size="23" fill="#415851">reuses</text>
+<rect x="40" y="820" width="400" height="162" rx="4" fill="#f4f7f4" stroke="#415851" stroke-width="2"/>
+<line x1="40" x2="440" y1="867" y2="867" stroke="#415851"/>
+<text x="240.0" y="852" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="bold">Board</text>
+<text x="56" y="898" font-family="Menlo,monospace" font-size="20">size / cells: tuple</text>
+<text x="56" y="932" font-family="Menlo,monospace" font-size="20">+ index / group</text>
+<text x="56" y="966" font-family="Menlo,monospace" font-size="20">+ neighbors / empty</text>
+<polyline points="240,692 240,820" fill="none" stroke="#415851" stroke-width="2.2" marker-end="url(#arrow)" marker-start="url(#diamond)"/>
+<text x="260" y="764" font-family="Helvetica,Arial,sans-serif" font-size="23" fill="#415851">1</text>
+<rect x="620" y="880" width="330" height="94" rx="4" fill="#f4f7f4" stroke="#415851" stroke-width="2"/>
+<line x1="620" x2="950" y1="927" y2="927" stroke="#415851"/>
+<text x="785.0" y="912" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="bold">GomokuRules</text>
+<text x="636" y="958" font-family="Menlo,monospace" font-size="20">+ place / outcome</text>
+<rect x="1100" y="880" width="350" height="128" rx="4" fill="#f4f7f4" stroke="#415851" stroke-width="2"/>
+<line x1="1100" x2="1450" y1="927" y2="927" stroke="#415851"/>
+<text x="1275.0" y="912" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="bold">GoRules</text>
+<text x="1116" y="958" font-family="Menlo,monospace" font-size="20">+ place / outcome</text>
+<text x="1116" y="992" font-family="Menlo,monospace" font-size="20">+ score / has_legal_move</text>
+<polyline points="785,880 785,790 1220,790 1220,692" fill="none" stroke="#415851" stroke-width="2.2" marker-end="url(#triangle)"/>
+<polyline points="1275,880 1275,692" fill="none" stroke="#415851" stroke-width="2.2" marker-end="url(#triangle)"/>
+<text x="40" y="1080" font-family="Helvetica,Arial,sans-serif" font-size="24">Legend: open triangle = inheritance; filled diamond = composition; arrow = association.</text>
+</svg>

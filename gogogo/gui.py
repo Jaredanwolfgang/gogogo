@@ -15,6 +15,11 @@ class GuiClient:
         root.geometry("1060x780")
         root.minsize(920, 700)
         root.configure(bg="#f1f3ee")
+        style = ttk.Style(root)
+        style.theme_use("clam")
+        style.configure(".", background="#f1f3ee", foreground="#203b31")
+        style.configure("TButton", padding=6)
+        style.configure("TEntry", fieldbackground="white")
         # 先定义组件布局，再创建组件并绑定命令。
         self.toolbar_design = (("重新开始", "restart"), ("悔棋", "undo"),
                                ("虚着", "pass"), ("认负", "resign"),
@@ -38,6 +43,13 @@ class GuiClient:
         ttk.Button(toolbar, text="开始新局", command=self.new).pack(side="left")
         for title, command in self.toolbar_design:
             ttk.Button(toolbar, text=title, command=lambda c=command: self.dispatch(c)).pack(side="left", padx=2)
+        # 先为底部输入区分配空间，防止棋盘的首选高度挤掉命令栏。
+        bottom = ttk.Frame(outer)
+        bottom.pack(side="bottom", fill="x", pady=(10, 0))
+        self.entry = ttk.Entry(bottom)
+        self.entry.pack(side="left", fill="x", expand=True)
+        self.entry.bind("<Return>", lambda event: self.submit())
+        ttk.Button(bottom, text="执行指令", command=self.submit).pack(side="right", padx=(8, 0))
         content = ttk.Frame(outer)
         content.pack(fill="both", expand=True, pady=14)
         self.canvas = tk.Canvas(content, bg="#e5c28a", highlightthickness=0, width=620, height=620)
@@ -54,12 +66,6 @@ class GuiClient:
         ttk.Button(sidebar, text="读取局面…", command=self.load).pack(fill="x", pady=3)
         self.help = ttk.Label(sidebar, wraplength=260, justify="left")
         self.help.pack(anchor="w", pady=20)
-        bottom = ttk.Frame(outer)
-        bottom.pack(fill="x")
-        self.entry = ttk.Entry(bottom)
-        self.entry.pack(side="left", fill="x", expand=True)
-        self.entry.bind("<Return>", lambda event: self.submit())
-        ttk.Button(bottom, text="执行指令", command=self.submit).pack(side="right", padx=(8, 0))
 
     def new(self):
         self.dispatch(f"new {self.kind.get()} {self.size.get()}")
