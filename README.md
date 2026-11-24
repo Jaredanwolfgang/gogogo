@@ -2,6 +2,8 @@
 
 面向对象技术与应用大作业第一阶段。Python 实现五子棋、围棋本地双人对战，包含控制台、可选 Tkinter 图形界面、JSON 存档、自动测试、设计报告与演示视频。
 
+[观看桌面操作录屏（1 分 50 秒）](results/desktop-demo.mp4) · [设计报告](docs/design.pdf)
+
 ## 运行
 
 控制台和测试仅依赖 Python 3.9+ 标准库，无须安装 pip 包。在本地课程目录中执行：
@@ -71,10 +73,14 @@ docs/design.typ     可编辑报告源文件
 docs/design.pdf     可提交的设计报告
 docs/architecture.svg  UML 类图
 results/tests.txt   实际自动测试记录
+results/desktop-demo.mp4  1 分 50 秒的游戏窗口实际录屏
+results/desktop-demo.srt  桌面演示中文字幕
+results/desktop-save.json 桌面操作保存的局面
 results/demo.mp4    3 分 44 秒的真实命令回放视频
 results/demo-transcript.txt  完整输入与输出
 results/demo-save.json       提子后存档样例
 scripts/demo.py     演示记录与视频生成脚本
+scripts/record_desktop.sh macOS 指定窗口录屏脚本
 ```
 
 ## 重现验证与演示
@@ -90,8 +96,10 @@ python3 scripts/demo.py --video --font /path/to/CJK-font.ttf
 typst compile docs/design.typ docs/design.pdf
 ```
 
-演示脚本执行真实 `ConsoleClient` 命令，输出和画面均来自运行结果。视频是带说明字幕的自动命令回放，无配音，不冒充人工屏幕录制；完整日志包含提示开关后的实际界面。
+`results/desktop-demo.mp4` 是真实 Tkinter 游戏窗口录屏，通过桌面键盘输入和确认对话框操作，覆盖五子棋、围棋提子、禁自杀、悔棋、存档恢复、提示开关、计分及认负。仅捕获游戏窗口，无音轨；裁掉窗口外围黑边与结尾空等时段，未重绘游戏画面。录制方法及章节见[桌面录屏说明](docs/gui-recording.md)。
+
+原 `results/demo.mp4` 继续作为补充：脚本执行真实 `ConsoleClient` 命令，将输出生成带说明文字的自动回放，包含劫争和悔棋额度等额外场景。完整日志包含提示开关后的实际界面。
 
 ## 提交材料
 
-仓库：[Jaredanwolfgang/gogogo](https://github.com/Jaredanwolfgang/gogogo)。演示视频：[results/demo.mp4](results/demo.mp4)。提交前请将视频上传至清华网盘，把分享链接填写到 `docs/submission.json`，然后重新编译报告；按课程要求将报告提交网络学堂。网盘分享和学堂提交尚未执行，报告不会虚构这两个步骤的完成状态。
+仓库：[Jaredanwolfgang/gogogo](https://github.com/Jaredanwolfgang/gogogo)。演示视频：[桌面操作录屏](results/desktop-demo.mp4)。提交前请将视频上传至清华网盘，把分享链接填写到 `docs/submission.json`，然后重新编译报告；按课程要求将报告提交网络学堂。网盘分享和学堂提交尚未执行，报告不会虚构这两个步骤的完成状态。

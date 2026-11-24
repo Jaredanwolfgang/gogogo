@@ -4,7 +4,7 @@
 
 代码仓库：https://github.com/Jaredanwolfgang/gogogo
 
-演示视频：[3 分 44 秒命令回放](../results/demo.mp4)。清华网盘链接与提交状态见 [submission.json](submission.json)，上传后填写 `cloud_video_url` 并重新编译 PDF。第二阶段需求尚未提供。
+演示视频：[1 分 50 秒桌面操作录屏](../results/desktop-demo.mp4)；补充材料：[3 分 44 秒命令回放](../results/demo.mp4)。清华网盘链接与提交状态见 [submission.json](submission.json)，上传后填写 `cloud_video_url` 并重新编译 PDF。第二阶段需求尚未提供。
 
 ## 需求与实现对应
 
@@ -151,7 +151,9 @@ classDiagram
 
 `python3 main.py` 启动控制台，`python3 main.py --gui` 启动图形模式。控制台只需 Python 3.9+ 标准库；GUI 另需可用的 Tk。Mac 自带旧 Tk 8.5 的兼容问题不影响控制台，推荐使用本机安装的 Python 3.12/Tk。
 
-视频包含 56 个真实命令输出画面，每个 4 秒，共 224 秒：0:00–1:04 演示五子棋和错误操作，1:04–2:04 演示提子、禁自杀、悔棋、保存读取和计分，2:04–2:48 演示劫争，2:48–3:44 演示提示开关、未知指令与悔棋额度。视频由实际运行输出生成，是自动命令回放，不是人工录屏；完整文字输出保存在 `results/demo-transcript.txt`。
+主视频 `results/desktop-demo.mp4` 长 110 秒，直接录制 Tkinter 游戏窗口，通过桌面键盘输入命令并操作确认对话框。内容包括五子棋连五、非法落点、围棋提子与禁自杀、悔棋恢复棋子、存档恢复历史、提示开关、双虚着计分、19×19 棋盘和认负。无音轨，未捕获桌面其他窗口；只裁掉窗口外围黑边与结尾空等时段。章节和复录方式见 `docs/gui-recording.md`。
+
+补充视频 `results/demo.mp4` 包含 56 个真实命令输出画面，每个 4 秒，共 224 秒：0:00–1:04 演示五子棋和错误操作，1:04–2:04 演示提子、禁自杀、悔棋、保存读取和计分，2:04–2:48 演示劫争，2:48–3:44 演示提示开关、未知指令与悔棋额度。它是自动命令回放；完整文字输出保存在 `results/demo-transcript.txt`。
 
 ## 参考来源
 
