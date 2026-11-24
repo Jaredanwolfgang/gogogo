@@ -27,8 +27,12 @@ test_ended_roundtrip (test_games.StorageTests.test_ended_roundtrip) ... ok
 test_file_errors_and_atomic_save (test_games.StorageTests.test_file_errors_and_atomic_save) ... ok
 test_oversize_and_invalid_utf8 (test_games.StorageTests.test_oversize_and_invalid_utf8) ... ok
 test_roundtrip_restores_history_and_undo_quota (test_games.StorageTests.test_roundtrip_restores_history_and_undo_quota) ... ok
+test_wide_and_tall_windows_center_board_and_keep_clicks_aligned (test_gui_view.BoardLayoutTests.test_wide_and_tall_windows_center_board_and_keep_clicks_aligned) ... ok
+test_capture_undo_and_readback_keep_last_move_consistent (test_gui_view.OverviewTests.test_capture_undo_and_readback_keep_last_move_consistent) ... ok
+test_pass_score_and_undo_return_to_active_player (test_gui_view.OverviewTests.test_pass_score_and_undo_return_to_active_player) ... ok
+test_resign_and_multiple_undos_do_not_leave_stale_marker (test_gui_view.OverviewTests.test_resign_and_multiple_undos_do_not_leave_stale_marker) ... ok
 
 ----------------------------------------------------------------------
-Ran 29 tests in 0.047s
+Ran 33 tests in 0.038s
 
 OK

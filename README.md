@@ -2,7 +2,7 @@
 
 面向对象技术与应用大作业第一阶段。Python 实现五子棋、围棋本地双人对战，包含控制台、可选 Tkinter 图形界面、JSON 存档、自动测试、设计报告与演示视频。
 
-[观看桌面操作录屏（1 分 50 秒）](results/desktop-demo.mp4) · [设计报告](docs/design.pdf)
+[自行录制脚本（操作 + 解说，约 4 分钟）](docs/recording-script.md) · [设计报告](docs/design.pdf) · [旧版界面录屏](results/desktop-demo.mp4)
 
 ## 运行
 
@@ -32,6 +32,16 @@ python3.12 main.py --gui
 ```
 
 macOS 系统 Python 自带的旧 Tk 8.5 可能显示空白窗口，请使用更新的 Tk。没有图形环境时使用控制台。GUI 提供游戏类型与棋盘大小选择、点击交叉点落子、重开、悔棋、虚着、认负、存取文件和提示开关，也支持底部输入命令。
+
+新版桌面界面使用居中的木色棋盘和分区信息卡片。右侧分别显示当前棋局、最近操作与可折叠提示；行棋方、手数、剩余悔棋和终局得分独立展示。棋盘圆点标记最后落子，悔棋和读档后同步恢复；新建或读档也会同步顶部棋类与尺寸。较小窗口下右侧可滚动，底部命令栏始终保留。
+
+自行录制时，可在另一终端运行（macOS，需允许终端录屏与 Swift 命令行工具）：
+
+```sh
+sh scripts/record_desktop.sh auto results/my-desktop-demo.mov 240
+```
+
+仅捕获唯一的 GOGOGO 窗口，4 分钟后自动保存。详细操作和解说见[录制脚本](docs/recording-script.md)。
 
 ## 命令
 
@@ -71,6 +81,7 @@ tests/              unittest 单元测试与命令行集成测试
 docs/design.md      设计说明与 Mermaid UML 源码
 docs/design.typ     可编辑报告源文件
 docs/design.pdf     可提交的设计报告
+docs/recording-script.md  自行录制的逐步操作与解说
 docs/architecture.svg  UML 类图
 results/tests.txt   实际自动测试记录
 results/desktop-demo.mp4  1 分 50 秒的游戏窗口实际录屏
@@ -96,7 +107,7 @@ python3 scripts/demo.py --video --font /path/to/CJK-font.ttf
 typst compile docs/design.typ docs/design.pdf
 ```
 
-`results/desktop-demo.mp4` 是真实 Tkinter 游戏窗口录屏，通过桌面键盘输入和确认对话框操作，覆盖五子棋、围棋提子、禁自杀、悔棋、存档恢复、提示开关、计分及认负。仅捕获游戏窗口，无音轨；裁掉窗口外围黑边与结尾空等时段，未重绘游戏画面。录制方法及章节见[桌面录屏说明](docs/gui-recording.md)。
+`results/desktop-demo.mp4` 是界面改版前的真实 Tkinter 游戏窗口录屏，通过桌面键盘输入和确认对话框操作，覆盖五子棋、围棋提子、禁自杀、悔棋、存档恢复、提示开关、计分及认负。仅捕获游戏窗口，无音轨；裁掉窗口外围黑边与结尾空等时段，未重绘游戏画面。历史录制章节见[桌面录屏说明](docs/gui-recording.md)，当前界面请按[新版录制脚本](docs/recording-script.md)自行录制。
 
 原 `results/demo.mp4` 继续作为补充：脚本执行真实 `ConsoleClient` 命令，将输出生成带说明文字的自动回放，包含劫争和悔棋额度等额外场景。完整日志包含提示开关后的实际界面。
 

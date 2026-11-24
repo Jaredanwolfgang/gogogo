@@ -1,15 +1,23 @@
 #!/bin/sh
 # 仅录制指定窗口；请先打开游戏并取得当前窗口 ID。
-# 用法：sh scripts/record_desktop.sh 窗口ID /tmp/gogogo-desktop.mov [秒数]
+# 用法：sh scripts/record_desktop.sh auto /tmp/gogogo-desktop.mov [秒数]
 # macOS 需要为启动此命令的宿主 App 授予录屏权限。
 set -eu
 if [ "$#" -lt 2 ] || [ "$#" -gt 3 ]; then
-    echo "用法：sh scripts/record_desktop.sh 窗口ID 输出.mov [秒数，默认140]" >&2
+    echo "用法：sh scripts/record_desktop.sh auto或窗口ID 输出.mov [秒数，默认240]" >&2
     exit 2
 fi
 window_id="$1"
 output="$2"
-duration="${3:-140}"
+duration="${3:-240}"
+if [ "$window_id" = "auto" ]; then
+    if ! command -v swift >/dev/null 2>&1; then
+        echo "自动识别需要 macOS Swift 命令行工具，或直接传入窗口 ID。" >&2
+        exit 2
+    fi
+    script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+    window_id=$(swift "$script_dir/find_game_window.swift")
+fi
 case "$window_id" in
     ''|*[!0-9]*) echo "窗口 ID 必须为正整数。" >&2; exit 2 ;;
 esac

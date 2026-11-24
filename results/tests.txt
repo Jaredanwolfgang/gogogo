@@ -27,8 +27,12 @@ test_ended_roundtrip (test_games.StorageTests) ... ok
 test_file_errors_and_atomic_save (test_games.StorageTests) ... ok
 test_oversize_and_invalid_utf8 (test_games.StorageTests) ... ok
 test_roundtrip_restores_history_and_undo_quota (test_games.StorageTests) ... ok
+test_wide_and_tall_windows_center_board_and_keep_clicks_aligned (test_gui_view.BoardLayoutTests) ... ok
+test_capture_undo_and_readback_keep_last_move_consistent (test_gui_view.OverviewTests) ... ok
+test_pass_score_and_undo_return_to_active_player (test_gui_view.OverviewTests) ... ok
+test_resign_and_multiple_undos_do_not_leave_stale_marker (test_gui_view.OverviewTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 29 tests in 0.037s
+Ran 33 tests in 0.040s
 
 OK
